@@ -2,7 +2,8 @@
   <head>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const heics = [
+        const pngs = [
+          4600,
           4677,
           4680,
           4681,
@@ -20,15 +21,18 @@
           5212,
           5359
         ];
-        const i = Math.floor(Math.random() * heics.length);
-        const img = `IMG_${heics[i]}.HEIC`;
+        const i = Math.floor(Math.random() * pngs.length);
+        const img = `IMG_${pngs[i]}.png`;
         const url = `https://wood-and-shooter.s3.us-east-2.amazonaws.com/${img}`;
-        document.getElementById('dogs').setAttribute('src', url);
+        const dogs = document.getElementById('dogs')
+        dogs.setAttribute('src', url);
+        dogs.addEventListener('click', () => document.getElementById('kazoo').play());
       });
     </script>
   </head>
   <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
     <h1>Woody and Shooter.dog</h1>
     <img id="dogs"></img>
+    <audo preload="auto" src="https://podsights.com/static/dre-kazoo-d33863146e0db470f46e2ba373742b86.mp3" id="kazoo" />
   <div>
 </body>
